@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "allowJs": true,
+    "checkJs": true,
+    "rootDir": "."
+  },
+  "include": ["@types/index.d.ts"]
+}

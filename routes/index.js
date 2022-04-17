@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const createError = require("http-errors");
+const api = require("./api");
+const web = require("./web");
+const errorHandler = require("./middlewares/errorHandler");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+const router = express.Router();
+
+router.use("/api", api);
+router.use("/web", web);
+
+router.use(function (req, res, next) {
+  next(createError(404));
 });
+
+router.use(errorHandler);
 
 module.exports = router;
