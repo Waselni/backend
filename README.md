@@ -8,6 +8,7 @@
 - Copy `.env.example` file as `.env` in project directory and fill in environment variables
 
 - [Optional] Run `npm run db migrate:latest` to get latest database migrations
+- then `npm run db seed:run`
 
 - Run `npm start` to run project
 
