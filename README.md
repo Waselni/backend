@@ -17,3 +17,4 @@
 - Knex query builder - https://knexjs.org
 - Objection ORM - https://vincit.github.io/objection.js/
 - Express - https://expressjs.com/en/4x/api.html
+- Article https://dev.to/carminezacc/user-authentication-jwt-authorization-with-flutter-and-node-176l
