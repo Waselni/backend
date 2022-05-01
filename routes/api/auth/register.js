@@ -6,7 +6,7 @@ const { createUser } = require('../../../controllers/user');
  * @param {import('express').Response} res
  * @param {import('express').NextFunction} next
  */
-async function signup(req, res, next) {
+async function register(req, res, next) {
   try {
     await createUser(req.body);
     res.status(204).end();
@@ -15,4 +15,4 @@ async function signup(req, res, next) {
   }
 }
 
-module.exports = signup;
+module.exports = register;
