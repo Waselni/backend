@@ -6,6 +6,7 @@ const { User } = require('../../models');
  * @param {Object} userInformation
  * @returns
  */
+
 module.exports = async function create(userInformation) {
   const [username] = userInformation.email.split('@');
 
@@ -14,10 +15,9 @@ module.exports = async function create(userInformation) {
     // student id
     username,
     password: userInformation.password,
-    user_type: 'passenger',
     email: userInformation.email,
     phone_number: userInformation.phone_number,
   });
 
-  return user;
+  return { user };
 };
