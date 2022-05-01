@@ -10,8 +10,7 @@ validate({
 const { secret } = config;
 
 /**
- * Creates new user in database
- * from data received from API
+ * Creates new token for authorized user
  * @param {Object} userInformation
  * @returns
  */

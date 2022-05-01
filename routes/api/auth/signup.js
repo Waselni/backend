@@ -1,17 +1,18 @@
+const { createUser } = require('../../../controllers/user');
+
 /**
  *
  * @param {import('express').Request} req
  * @param {import('express').Response} res
  * @param {import('express').NextFunction} next
  */
-const signup = async function (req, res, next) {
-  const userInformation = req.body;
+async function signup(req, res, next) {
   try {
-    // const user = await signUp(userInformation);
-    // res.status(201).json(user)
+    await createUser(req.body);
+    res.status(204).end();
   } catch (error) {
     next(error);
   }
-};
+}
 
 module.exports = signup;
