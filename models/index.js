@@ -5,7 +5,10 @@ const knexConfig = require('../knexfile');
 Model.knex(knex(knexConfig));
 const User = require('./User');
 const Car = require('./Car');
+const Trip = require('./Trip');
 
 module.exports = {
-  User, Car,
+  User,
+  Car,
+  Trip,
 };
