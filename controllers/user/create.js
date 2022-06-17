@@ -12,8 +12,7 @@ module.exports = async function create(userInformation) {
 
   const user = await User.query().insert({
     name: userInformation.name,
-    // student id
-    username,
+    username, // student id
     password: userInformation.password,
     email: userInformation.email,
     phone_number: userInformation.phone_number,

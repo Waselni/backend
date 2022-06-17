@@ -29,6 +29,7 @@ module.exports = async function createToken(userInformation) {
   }
 
   const token = jwt.sign({ id: user.id }, secret);
+  const userType = user.user_type;
 
-  return { token };
+  return { token, userType };
 };
