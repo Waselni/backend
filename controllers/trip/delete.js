@@ -1,7 +1,6 @@
 const { Trip } = require('../../models');
 /**
- * delete trip from database
- * by id received from API
+ *
  * @param {Object} tripInfo
  * @returns
  */
