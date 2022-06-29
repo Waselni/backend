@@ -5,13 +5,9 @@ const { Trip } = require('../../models');
  */
 
 module.exports = async function edit(tripInfo) {
-  const trip = await Trip.query().updateAndFetchById(Number(tripInfo.id), {
-    start_at: tripInfo.start_at,
-    end_at: tripInfo.end_at,
-    status: tripInfo.status,
-    distance: Number(tripInfo.distance),
-    driver_id: Number(tripInfo.driver_id),
-    seats: Number(tripInfo.seats),
-  });
-  return { trip };
+  const start_at = await Trip.query().patch({ start_at: tripInfo.start_at }).findById(Number(tripInfo.id));
+  const source = await Trip.query().patch({ source: tripInfo.source }).findById(Number(tripInfo.id));
+  const destination = await Trip.query().patch({ destination: tripInfo.destination }).findById(Number(tripInfo.id));
+  const seats = await Trip.query().patch({seats: Number(tripInfo.seats)}).findById(Number(tripInfo.id));
+  return { start_at };
 };

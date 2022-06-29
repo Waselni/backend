@@ -6,6 +6,10 @@ const { User } = require('../../models');
 
 module.exports = async function getUserF(userInformation) {
   const id = Number(userInformation.User_id);
-  const user = await User.query().findByIds(id);
-  return { user };
+  const userlist = await User.query().where('id', id).limit(1);
+  const user = userlist[0];
+  const name = user.name;
+  const phone_number = user.phone_number;
+  const email = user.email;
+  return { name, phone_number, email };
 };

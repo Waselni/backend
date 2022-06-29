@@ -1,4 +1,4 @@
-const { getTrips } = require('../../../controllers/trip');
+const { addReserve } = require('../../../controllers/reserve');
 
 /**
  *
@@ -6,14 +6,13 @@ const { getTrips } = require('../../../controllers/trip');
  * @param {import('express').Response} res
  * @param {import('express').NextFunction} next
  */
-async function getTripF(req, res, next) {
+async function add(req, res, next) {
   try {
-    
-    const data = await getTrips();
+    const data = await addReserve(req.body);
     res.send(data);
   } catch (error) {
     next(error);
   }
 }
 
-module.exports = getTripF;
+module.exports = add;

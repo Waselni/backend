@@ -19,20 +19,28 @@ class Trip extends Model {
     type: 'object',
     required: [
       'start_at',
-      'end_at',
-      'status',
+      'source',
+      'destination',
+      'duration',
       'distance',
       'driver_id',
       'seats',
+      'status',
     ],
     additionalProperties: false,
     properties: {
       start_at: { type: 'string', minLength: 1, maxLength: 255 },
-      end_at: { type: 'string', minLength: 1, maxLength: 255 },
-      status: { type: 'string', minLength: 1, maxLength: 255 },
+      source: { type: 'string', minLength: 1, maxLength: 255 },
+      destination: { type: 'string', minLength: 1, maxLength: 255 },
+      duration: { type: 'string', minLength: 1, maxLength: 255 },
       distance: { type: 'number', minLength: 1, maxLength: 255 },
       driver_id: { type: 'number', minLength: 1, maxLength: 255 },
       seats: { type: 'number', minLength: 1, maxLength: 255 },
+      status: {
+        type: 'string', enum: ['Initiated', 'In Progress', 'Completed'],
+        default: 'Initiated',
+      },
+
     },
   };
 }
