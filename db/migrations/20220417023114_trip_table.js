@@ -11,7 +11,6 @@ exports.up = function (knex) {
     table.datetime('end_at').notNullable();
     table.string('status').notNullable();
     table.float('distance').notNullable();
-
     table.integer('driver_id').unsigned().notNullable();
 
     table

@@ -5,7 +5,9 @@ const { Trip } = require('../../models');
  */
 
 module.exports = async function get() {
-  const trips = await Trip.query().whereNot('seats','>',0);
+  const trips = await Trip.query()
+  .where('seats','>',0)
+  .whereNot('status','Completed');
   console.log(trips);
   return trips;
 

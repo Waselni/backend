@@ -5,4 +5,5 @@ const getUser = require('./getUser');
 const getUsers = require('./getUsers');
 const editUser = require('./editUser');
 
-module.exports = { createUser, createToken, deleteUser, getUser ,editUser ,getUsers};
+
+module.exports = { createUser, createToken, deleteUser, getUser, editUser, getUsers};

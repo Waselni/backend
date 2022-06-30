@@ -9,7 +9,7 @@ const {cancelReserve } = require('../../../controllers/reserve');
 async function deleteReserveF(req, res, next) {
   try {
     const data = await cancelReserve(req.body);
-    res.send(data);
+    res.json(data);
   } catch (error) {
     next(error);
   }
